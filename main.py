@@ -1,27 +1,45 @@
-#v1.2.1
+#v1.3 - Beta
 from create import create 
 from stf import finish 
 from stf import checker
 from stf import patt
 from stf import hefresh
+from stf import fib
+from stf import multi
+
 import time
 
+
+
+
 def finder(list):
+    
+    print "\n\nJust started a new round and here is the list:"
+    print list
+    alist = hefresh(list)
+    
+    print "Stuff:"
+    spc,pat = checker(alist) #spc resembles the amount of spaces between each time the pattern repeats itself
+    mult = multi(list)
+    if mult != 0:
+        print "Your got a multiplication situation"
+        return mult
+    else:
+        pass
+    if fib(list):
+        length = len(list)
+        print "Ha Ha fibinaodjfklidjs"
+        return list[length-2] + list[length-1] 
     
     if len(list) == 0:
         print "We got no answer"
         return 0
     else:
         pass
-    print "Just started a new round and here is the list:"
-    print list
-    alist = hefresh(list)
-    print alist
-    print "Stuff:"
-    spc,pat = checker(alist) #spc resembles the amount of spaces between each time the pattern repeats itself
-    
     if spc == 0:
         print "We are doing one extra round!"
+        print "Didn't find anything yet, This is the Hefresh (hebrew word) between the numbers, I'm going to try and find a sequence there."
+        print alist
         return finder(alist)
         #we got no answer and we need to figure out what piece of code to stick in here
     else:#we got an answer and were going to deal with that right now
@@ -59,6 +77,7 @@ def searcher(list):
         finish(list,alist,dif)
 
 list = create()
+#print multi(list)
 print finder(list)
 #list = create()
 #print checker([])

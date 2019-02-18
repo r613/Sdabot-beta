@@ -4,7 +4,31 @@ def hefresh(list):
     for i in range(len(list)-1):
         alist.append( (list[i+1]) - (list[i]) )
     return alist 
+def fib(list):
+    if len(list) < 4:
+        return False
+    for a in range (len(list)-2):
+        if list[a] + list[a+1] != list[a+2]:
+            return False
+    return True 
+def multi(list):
+    if len(list) < 4:
+        return 0
+    length = len(list) -1 
+    dif = float(list[1]) / list[0]
+    for a in range (length - 1):
+    
+        if list[a] * float(dif) != float(list[a+1]):            
+            
+            return 0
+    
+    number = float(list[length])
+    nlist = []
+    for a in range(2):
+        number = float(number) * float(dif)
+        nlist.append(float(number))
 
+    return nlist 
 def finish(list,alist,cs):
     length = len(list) - 1
     
